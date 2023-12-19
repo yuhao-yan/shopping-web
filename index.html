@@ -1,19 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <script>
     window.onload = function() {
+        aTag = document.getElementsByClassName("login");
         var username = "<%= session.getAttribute("username") %>";
-        <%-- alert(username); --%>
-        if(username == "reset"){
+        alert(aTag[0].innerHTML) --%>
+        if(username == "reset" || username == null || username == "null"){
             aTag[0].innerHTML = "请先登录";
             aTag[0].href = "login.jsp";
         }
-        else if (username != null) {
-            var aTag = document.getElementsByClassName("login");
+        else {
             aTag[0].innerHTML = username;
             aTag[0].href = "reset.jsp";
-            <%-- alert(aTag[0].innerHTML); --%>
+        }
+        amaTag = document.getElementsByClassName("amlogin");
+        var amname = "<%= session.getAttribute("amname") %>";
+        if(amname == "reset" || amname == null || amname == "null"){
+            amaTag[0].innerHTML = "请先登录";
+            amaTag[0].href = "login.jsp";
+        }
+        else {
+            var aTag = document.getElementsByClassName("login");
+            amaTag[0].innerHTML = username;
+            amaTag[0].href = "reset.jsp";
         }
     }
 </script>
@@ -40,10 +51,11 @@
     <div class="shortcut">
         <div class="wrapper">
             <ul>
+                <li><a href="amlogin.jsp" class = "amlogin">管理员登录</a></li>
                 <li><a href="login.jsp" class = "login">请先登录</a></li>
                 <li><a href="register.jsp">免费注册</a></li>
-                <li><a href="products.jsp">我的订单</a></li>
-                <li><a href="#">会员中心</a></li>
+                <li><a href="car.jsp">我的订单</a></li>
+                <li><a href="main.jsp">会员中心</a></li>
                 <li><a href="#">帮助中心</a></li>
                 <li><a href="#">在线客服</a></li>
                 <li><a href="#"><span></span>手机版</a></li>
@@ -135,7 +147,7 @@
         <div class="bd clearfix">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="add.jsp?imgSrc=./uploads/new_goods_1.jpg&imgName=睿米无线吸尘器F8&value=899">
                         <img src="./uploads/new_goods_1.jpg" alt="">
                         <h3>睿米无线吸尘器F8</h3>
                         <div>￥<span>899</span></div>
@@ -143,25 +155,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./uploads/new_goods_1.jpg" alt="">
-                        <h3>睿米无线吸尘器F8</h3>
-                        <div>￥<span>899</span></div>
+                    <a href="add.jsp?imgSrc=./uploads/new_goods_2.jpg&imgName=智能环绕3d空间&value=1299">
+                        <img src="./uploads/new_goods_2.jpg" alt="">
+                        <h3>智能环绕3d空间</h3>
+                        <div>￥<span>1299</span></div>
                         <b>新品</b>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./uploads/new_goods_1.jpg" alt="">
-                        <h3>睿米无线吸尘器F8</h3>
-                        <div>￥<span>899</span></div>
+                    <a href="add.jsp?imgSrc=./uploads/new_goods_3.jpg&imgName=广东软软糯米煲仔饭&value=129">
+                        <img src="./uploads/new_goods_3.jpg" alt="">
+                        <h3>广东软软糯米煲仔饭</h3>
+                        <div>￥<span>129</span></div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="./uploads/new_goods_1.jpg" alt="">
-                        <h3>睿米无线吸尘器F8</h3>
-                        <div>￥<span>899</span></div>
+                    <a href="add.jsp?imgSrc=./uploads/new_goods_4.jpg&imgName=广东软软糯米煲仔饭&value=3399">
+                        <img src="./uploads/new_goods_4.jpg" alt="">
+                        <h3>广东软软糯米煲仔饭</h3>
+                        <div>￥<span>3399</span></div>
                     </a>
                 </li>
 
